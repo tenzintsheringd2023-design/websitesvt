@@ -1,52 +1,50 @@
-/* Reset default margins */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar container */
+/* Horizontal Navigation Bar */
 .navbar {
-    display: flex;
+    width: 100%;
     background-color: #333;
-    padding: 20px 30px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Navbar links */
-.navbar a {
     color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: white;
+    margin-left: 20px;
     text-decoration: none;
-    padding: 20px 25px;
-    transition: background-color 0.3s;
-    font-size:20px;
 }
 
-/* Hover effect */
-.navbar a:hover {
-    background-color: #575757;
-    border-radius: 4px;
+.navbar .nav-links a:hover {
+    text-decoration: underline;
 }
 
-/* Logo style */
-.navbar .logo {
-    font-weight: bold;
-    font-size: 30px;
+/* Vertical Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    top: 70px; /* space for the horizontal navbar */
+    left: 0;
+    width: 180px;
+    height: 100%;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
 }
 
-/* Content padding */
+.sidebar a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* Push content right so it doesn't sit under the sidebar */
 .content {
+    margin-left: 200px;
     padding: 20px;
-}
-
-/* Responsive menu for small screens */
-@media screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar a {
-        width: 100%;
-        padding: 10px 0;
-    }
 }
