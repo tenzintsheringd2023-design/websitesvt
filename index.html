@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join with me.</title>
+    <title>Home - Myself</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,25 +12,47 @@
     <div class="navbar">
         <div class="logo">Myself</div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#work">Work</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="work.html">Work</a>
         </div>
     </div>
 
     <!-- Vertical Sidebar -->
     <div class="sidebar">
-        <a href="#about">About</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+        <div class="sidebar-item">
+            <a href="index.html" class="active">Home Overview</a>
+            <p class="sidebar-desc">Introduction and welcome message</p>
+        </div>
+        <div class="sidebar-item">
+            <a href="#updates">Latest Updates</a>
+            <p class="sidebar-desc">Recent changes and experiments</p>
+        </div>
+        <div class="sidebar-item">
+            <a href="#highlights">Highlights</a>
+            <p class="sidebar-desc">Important features and achievements</p>
+        </div>
+        <div class="sidebar-item">
+            <a href="#contact">Contact</a>
+            <p class="sidebar-desc">Get in touch with me</p>
+        </div>
     </div>
 
     <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is an example page with both a horizontal and vertical navigation bar.</p>
+        <h1>Welcome to My Personal Website!</h1>
+        <p>Hello! I’m glad you’re here. This is my personal space where you can learn about me, my hobbies, and my work.</p>
+
+        <h2 id="updates">Latest Updates</h2>
+        <ul>
+            <li>Started learning web development!</li>
+            <li>Created this website using HTML, CSS, and soft pastel UI.</li>
+            <li>Experimenting with layouts and design improvements.</li>
+        </ul>
+
+        <img src="https://via.placeholder.com/600x300/FFB6D9/FFFFFF?text=Welcome+Image" 
+             alt="Welcome" style="margin-top:20px; width:100%; border-radius:12px;">
     </div>
 
 </body>
 </html>
-
