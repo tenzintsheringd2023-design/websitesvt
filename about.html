@@ -1,61 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Myself</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Myself</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* Hide all content sections by default */
+    .content-section {
+        display: none;
+    }
+
+    /* Show section if its id matches the URL fragment */
+    .content-section:target {
+        display: block;
+    }
+
+    /* Optional: show About Me if no section is targeted */
+    body:not(:target) #about-me {
+        display: block;
+    }
+
+    /* Sidebar link styling */
+    .sidebar-item a {
+        text-decoration: none;
+        color: #333;
+    }
+    .sidebar-item a:hover {
+        color: #007bff;
+    }
+</style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Myself</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="hobbies.html">Hobbies</a>
-            <a href="work.html">Work</a>
-        </div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">Myself</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="work.html">Work</a>
     </div>
+</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-item">
-            <a href="about.html" class="active">About Me</a>
-            <p class="sidebar-desc">Introduction and personal background</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#journey">My Journey</a>
-            <p class="sidebar-desc">How I started learning and growing</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#skills">Skills</a>
-            <p class="sidebar-desc">Web development, design, and creative abilities</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#contact">Contact</a>
-            <p class="sidebar-desc">Reach out for collaboration or questions</p>
-        </div>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-item">
+        <a href="#about-me">About Me</a>
     </div>
+    <div class="sidebar-item">
+        <a href="#journey">My Journey</a>
+    </div>
+    <div class="sidebar-item">
+        <a href="#skills">Skills</a>
+    </div>
+    <div class="sidebar-item">
+        <a href="#contact">Contact</a>
+    </div>
+</div>
 
-    <div class="content">
+<!-- Main Content -->
+<div class="content">
+    <div id="about-me" class="content-section">
         <h1>About Me</h1>
         <p>Hi! My name is [Your Name]. I love designing clean websites and working with pastel colors.</p>
+        <img src="https://via.placeholder.com/600x300/A7D8FF/333333?text=About+Me" 
+             alt="About" style="margin-top:20px; width:100%; border-radius:12px;">
+    </div>
 
-        <h2 id="journey">My Journey</h2>
+    <div id="journey" class="content-section">
+        <h2>My Journey</h2>
         <p>I started learning HTML and CSS recently and I’ve been improving my skills every day.</p>
+    </div>
 
-        <h2 id="skills">My Skills</h2>
+    <div id="skills" class="content-section">
+        <h2>My Skills</h2>
         <ul>
             <li>HTML, CSS, JavaScript (basic)</li>
             <li>UI/UX design</li>
             <li>Photo editing & visual design</li>
         </ul>
-
-        <img src="https://via.placeholder.com/600x300/A7D8FF/333333?text=About+Me" 
-             alt="About" style="margin-top:20px; width:100%; border-radius:12px;">
     </div>
+
+    <div id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>You can reach me at <strong>email@example.com</strong> or via social media.</p>
+    </div>
+</div>
 
 </body>
 </html>
