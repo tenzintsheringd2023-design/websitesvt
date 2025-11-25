@@ -5,62 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobbies - Myself</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f3f6ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px 50px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .content h1, .content h2 {
+            color: #3d52ff;
+            border-left: 6px solid #3d52ff;
+            padding-left: 12px;
+            margin-top: 30px;
+        }
+
+        .content p {
+            line-height: 1.7;
+            margin-top: 12px;
+        }
+
+        .content ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .sidebar-item a:hover {
+            color: #007bff;
+        }
+
+        .sidebar-desc {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 2px 0 8px 0;
+        }
+
+        /* Hide all sections by default */
+        .content-section {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        /* Show All Hobbies by default */
+        #all-hobbies {
+            display: block;
+        }
+
+        /* Show targeted section */
+        .content-section:target {
+            display: block;
+        }
+
+        /* Hide All Hobbies if any other section is targeted */
+        .content-section:target ~ #all-hobbies {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Myself</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="hobbies.html" class="active">Hobbies</a>
-            <a href="work.html">Work</a>
-        </div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">Myself</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="hobbies.html" class="active">Hobbies</a>
+        <a href="work.html">Work</a>
     </div>
+</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-item">
-            <a href="hobbies.html" class="active">All Hobbies</a>
-            <p class="sidebar-desc">Overview of all my hobbies</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#creative">Creative</a>
-            <p class="sidebar-desc">Web design, photography, and editing</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#sports">Sports</a>
-            <p class="sidebar-desc">Jogging, badminton, and outdoor fun</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#technology">Technology</a>
-            <p class="sidebar-desc">Apps, web development, and tech exploration</p>
-        </div>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-item">
+        <a href="#all-hobbies" class="active">All Hobbies</a>
+        <p class="sidebar-desc">Overview of all my hobbies</p>
     </div>
+    <div class="sidebar-item">
+        <a href="#creative">Creative</a>
+        <p class="sidebar-desc">Web design, photography, and editing</p>
+    </div>
+    <div class="sidebar-item">
+        <a href="#sports">Sports</a>
+        <p class="sidebar-desc">Jogging, badminton, and outdoor fun</p>
+    </div>
+    <div class="sidebar-item">
+        <a href="#technology">Technology</a>
+        <p class="sidebar-desc">Apps, web development, and tech exploration</p>
+    </div>
+</div>
 
-    <div class="content">
-        <h1>My Hobbies</h1>
-        <p>These are the things I love doing in my free time.</p>
-
-        <h2 id="creative">Creative Hobbies</h2>
+<!-- Main Content -->
+<div class="content">
+    <!-- Other sections first -->
+    <div id="creative" class="content-section">
+        <h2>Creative Hobbies</h2>
         <ul>
             <li>Web design & CSS experimentation</li>
             <li>Photography and photo editing</li>
         </ul>
+    </div>
 
-        <h2 id="sports">Sports</h2>
+    <div id="sports" class="content-section">
+        <h2>Sports</h2>
         <ul>
             <li>Jogging and outdoor activities</li>
             <li>Badminton with friends</li>
         </ul>
+    </div>
 
-        <h2 id="technology">Technology</h2>
+    <div id="technology" class="content-section">
+        <h2>Technology</h2>
         <ul>
             <li>Exploring new apps and tools</li>
             <li>Learning web & game development</li>
         </ul>
+    </div>
 
+    <!-- All Hobbies last -->
+    <div id="all-hobbies" class="content-section">
+        <h1>My Hobbies</h1>
+        <p>These are the things I love doing in my free time.</p>
         <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:15px;">
             <img src="https://via.placeholder.com/280x160/FFB6D9/FFFFFF?text=Hobby+1" 
                  style="border-radius:12px; width:280px;">
@@ -68,6 +163,7 @@
                  style="border-radius:12px; width:280px;">
         </div>
     </div>
+</div>
 
 </body>
 </html>
