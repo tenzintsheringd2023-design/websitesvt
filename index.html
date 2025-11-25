@@ -5,10 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Myself</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Aesthetic font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General styling (content only) */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f3f6ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px 50px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #3d52ff;
+            border-left: 6px solid #3d52ff;
+            padding-left: 12px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        ol li, ul li {
+            margin: 15px 0;
+            font-size: 1.08em;
+        }
+
+        /* Image rows to make layout aesthetic */
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin: 20px 0 40px;
+        }
+
+        .image-row img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Horizontal Navbar -->
+    <!-- NAVBAR UNCHANGED -->
     <div class="navbar">
         <div class="logo">Myself</div>
         <div class="nav-links">
@@ -27,51 +79,38 @@
             my projects, and the things I enjoy learning. Feel free to explore with me.
         </p>
 
-        <!-- New Section: Reason for the Website -->
         <h2 id="purpose">Why I Am Making This Website</h2>
         <p>
-            I created this website to practice and improve my web development skills. 
-            It allows me to learn how to structure pages using HTML, style them with CSS.
-            This website also serves as a personal space where I can share information 
-            about myself, my hobbies, and my goals. Eventually, I hope it will become 
-            a portfolio that showcases my work and learning journey which can help me in the future basis.
+            I created this website to practice and improve my web development skills.
+            It helps me learn how to structure pages using HTML and style them with CSS.
+            This also serves as a space where I can share information 
+            about myself, my hobbies, and my goals. In the future, I want this to 
+            become a portfolio to showcase my learning journey.
         </p>
 
         <h2 id="highlights">Facts</h2>
-
         <p>Here are some special facts about me:</p>
+
         <ol>
             <li>I love doing origami.</li>
-            <br>
-            <div>
-                 <img src="https://www.lavenderhome.co.uk/cdn/shop/files/origami-fox.jpg?v=1687346677&width=1500" 
-                 alt="Origami 1" style="display:inline-block; width:300px; margin-right:20px; box-shadow:0 0 20px 5px #ff9a9e;">
-                 <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/origami-3584204-1280_ver_1.jpg"
-                 alt="Origami 2" style="display:inline-block; width:300px; margin-right:20px; box-shadow:0 0 20px 5px #ff9a9e;">
-                 <img src="https://www.wikihow.com/images/8/81/Fold-an-Origami-Star-Summary-Version-2.jpg" 
-                 alt="Origami 3" style="display:inline-block; width:300px; box-shadow:0 0 20px 5px #ff9a9e;">
+            <div class="image-row">
+                <img src="https://www.lavenderhome.co.uk/cdn/shop/files/origami-fox.jpg?v=1687346677&width=1500" alt="Origami 1">
+                <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/origami-3584204-1280_ver_1.jpg" alt="Origami 2">
+                <img src="https://www.wikihow.com/images/8/81/Fold-an-Origami-Star-Summary-Version-2.jpg" alt="Origami 3">
             </div>
 
             <li>I love to listen to lots of music.</li>
-            <br>
-            <div>
-                 <img src="https://www.nme.com/wp-content/uploads/2021/10/seventeen-every-song-ranked-getty.jpg" 
-                 alt="Music 1" style="display:inline-block; width:300px; margin-right:20px; height:300px; box-shadow:0 0 20px 5px #9ad1ff;">
-                 <img src="https://www.dynamicrhythms.com.au/wp-content/uploads/2023/10/Untitled-design-1.jpg"
-                 alt="Music 2" style="display:inline-block; width:300px; margin-right:20px; box-shadow:0 0 20px 5px #9ad1ff;">
-                 <img src="https://i.scdn.co/image/ab67616d00001e023a7355d8c3fe5d69d79e8ed3" 
-                 alt="Music 3" style="display:inline-block; width:300px; box-shadow:0 0 20px 5px #9ad1ff;">
+            <div class="image-row">
+                <img src="https://www.nme.com/wp-content/uploads/2021/10/seventeen-every-song-ranked-getty.jpg" alt="Music 1">
+                <img src="https://www.dynamicrhythms.com.au/wp-content/uploads/2023/10/Untitled-design-1.jpg" alt="Music 2">
+                <img src="https://i.scdn.co/image/ab67616d00001e023a7355d8c3fe5d69d79e8ed3" alt="Music 3">
             </div>
 
             <li>My favourite sport is volleyball.</li>
-            <br>
-            <div>
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRveEsmne7K6U7jkBqcpss0ZjgsYAxDeBAZYmw2rJ5NBdHLFll9M5EU2H6n25L1w65nMH4&usqp=CAU" 
-                 alt="Volleyball 1" style="display:inline-block; width:300px; margin-right:20px; box-shadow:0 0 20px 5px #ffd97d;">
-                 <img src="https://i.pinimg.com/564x/af/ba/a1/afbaa18bbc9361e165d299962cbd69be.jpg"
-                 alt="Volleyball 2" style="display:inline-block; width:300px; margin-right:20px; box-shadow:0 0 20px 5px #ffd97d;">
-                 <img src="https://www.improveyourvolley.com/images/x383px-VolleyballCourtwithlengths.png.pagespeed.ic.EB6GEBP2I3.png" 
-                 alt="Volleyball 3" style="display:inline-block; width:300px; box-shadow:0 0 20px 5px #ffd97d;">
+            <div class="image-row">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRveEsmne7K6U7jkBqcpss0ZjgsYAxDeBAZYmw2rJ5NBdHLFll9M5EU2H6n25L1w65nMH4&usqp=CAU" alt="Volleyball 1">
+                <img src="https://i.pinimg.com/564x/af/ba/a1/afbaa18bbc9361e165d299962cbd69be.jpg" alt="Volleyball 2">
+                <img src="https://www.improveyourvolley.com/images/x383px-VolleyballCourtwithlengths.png.pagespeed.ic.EB6GEBP2I3.png" alt="Volleyball 3">
             </div>
 
             <li>My friends say I give good advice.</li>
@@ -79,11 +118,12 @@
 
         <h2 id="goals">My Goals</h2>
         <p>Here are some personal goals I am working on:</p>
+
         <ul>
             <li>Improve creativity and artistic skills (drawing, photography, music, etc.).</li>
-            <li>Participate in competitions or community events</li>
+            <li>Participate in competitions or community events.</li>
             <li>Collaborate with others to gain experience.</li>
-            <li>Become a better version of myself</li>
+            <li>Become a better version of myself.</li>
         </ul>
     </div>
 
