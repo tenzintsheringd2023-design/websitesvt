@@ -5,65 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work - Myself</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f3f6ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px 50px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .content h1, .content h2 {
+            color: #3d52ff;
+            border-left: 6px solid #3d52ff;
+            padding-left: 12px;
+            margin-top: 30px;
+        }
+
+        .content p {
+            line-height: 1.7;
+            margin-top: 12px;
+        }
+
+        .content ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .sidebar-item a:hover {
+            color: #007bff;
+        }
+
+        .sidebar-desc {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 2px 0 8px 0;
+        }
+
+        /* Hide all sections by default */
+        .content-section {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        /* Show Work Overview by default */
+        #work-overview {
+            display: block;
+        }
+
+        /* Show any targeted section */
+        .content-section:target {
+            display: block;
+        }
+
+        /* Hide Work Overview if any other section is targeted */
+        .content-section:target ~ #work-overview {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Myself</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="hobbies.html">Hobbies</a>
-            <a href="work.html" class="active">Work</a>
-        </div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">Myself</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="work.html" class="active">Work</a>
     </div>
+</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="sidebar-item">
-            <a href="work.html" class="active">Work Overview</a>
-            <p class="sidebar-desc">Introduction to my experience and projects</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#experience">Experience</a>
-            <p class="sidebar-desc">Work background and skills learned</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#projects">Projects</a>
-            <p class="sidebar-desc">Personal and learning-based projects</p>
-        </div>
-        <div class="sidebar-item">
-            <a href="#contact">Contact</a>
-            <p class="sidebar-desc">Reach out for collaboration or questions</p>
-        </div>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-item">
+        <a href="#work-overview" class="active">Work Overview</a>
+        <p class="sidebar-desc">Introduction to my experience and projects</p>
     </div>
+    <div class="sidebar-item">
+        <a href="#experience">Experience</a>
+        <p class="sidebar-desc">Work background and skills learned</p>
+    </div>
+    <div class="sidebar-item">
+        <a href="#projects">Projects</a>
+        <p class="sidebar-desc">Personal and learning-based projects</p>
+    </div>
+    <div class="sidebar-item">
+        <a href="#contact">Contact</a>
+        <p class="sidebar-desc">Reach out for collaboration or questions</p>
+    </div>
+</div>
 
-    <div class="content">
-        <h1>My Work</h1>
-        <p>This page showcases my work, experience, and personal projects.</p>
+<!-- Main Content -->
+<div class="content">
 
-        <h2 id="experience">Experience</h2>
+    <!-- Other sections first -->
+    <div id="experience" class="content-section">
+        <h2>Experience</h2>
         <ul>
             <li>Beginner front-end developer learning HTML, CSS, and JavaScript.</li>
             <li>Designed soft pastel UI layouts for personal projects.</li>
             <li>Created banners, simple designs, and layouts for small tasks.</li>
         </ul>
+    </div>
 
-        <h2 id="projects">Projects</h2>
+    <div id="projects" class="content-section">
+        <h2>Projects</h2>
         <ul>
             <li>My pastel-themed personal website.</li>
             <li>JavaScript mini-projects (sliders, popups, animations).</li>
             <li>Photo editing & digital design artworks.</li>
         </ul>
-
         <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:15px;">
-            <img src="https://via.placeholder.com/280x160/FFD6E8/333333?text=Project+1" 
-                 style="border-radius:12px; width:280px;">
-            <img src="https://via.placeholder.com/280x160/B9E5FF/333333?text=Project+2" 
-                 style="border-radius:12px; width:280px;">
+            <img src="https://via.placeholder.com/280x160/FFD6E8/333333?text=Project+1" style="border-radius:12px; width:280px;">
+            <img src="https://via.placeholder.com/280x160/B9E5FF/333333?text=Project+2" style="border-radius:12px; width:280px;">
         </div>
     </div>
+
+    <div id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>You can reach me at <strong>email@example.com</strong> or via social media.</p>
+    </div>
+
+    <!-- Work Overview last -->
+    <div id="work-overview" class="content-section">
+        <h1>My Work</h1>
+        <p>This page showcases my work, experience, and personal projects.</p>
+    </div>
+</div>
 
 </body>
 </html>
