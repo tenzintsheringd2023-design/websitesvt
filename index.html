@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* General styling (content only) */
+        /* General styling */
         body {
             font-family: "Poppins", sans-serif;
             background: #f3f6ff;
@@ -42,7 +42,7 @@
             font-size: 1.08em;
         }
 
-        /* Image rows to make layout aesthetic */
+        /* Image rows */
         .image-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -50,17 +50,51 @@
             margin: 20px 0 40px;
         }
 
+        /* Center only the first image */
+        .centered-img {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Image styling with animations */
         .image-row img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+            border: 3px solid #e1e4ff;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+
+            /* Fade-in animation */
+            opacity: 0;
+            animation: fadeIn 1.2s ease forwards;
+
+            /* Transition for hover effects */
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+        }
+
+        /* Hover zoom + glow shadow */
+        .image-row img:hover {
+            transform: scale(1.07); 
+            box-shadow: 0 10px 28px rgba(61, 82, 255, 0.4); 
+            border-color: #3d52ff; 
+        }
+
+        /* Fade-in animation keyframe */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR UNCHANGED -->
+    <!-- NAVBAR -->
     <div class="navbar">
         <div class="logo">Myself</div>
         <div class="nav-links">
@@ -92,28 +126,44 @@
         <p>Here are some special facts about me:</p>
 
         <ol>
-            <li>I love doing origami.</li>
-            <div class="image-row">
-                <img src="https://www.lavenderhome.co.uk/cdn/shop/files/origami-fox.jpg?v=1687346677&width=1500" alt="Origami 1">
-                <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/origami-3584204-1280_ver_1.jpg" alt="Origami 2">
-                <img src="https://www.wikihow.com/images/8/81/Fold-an-Origami-Star-Summary-Version-2.jpg" alt="Origami 3">
-            </div>
 
-            <li>I love to listen to lots of music.</li>
-            <div class="image-row">
-                <img src="https://www.nme.com/wp-content/uploads/2021/10/seventeen-every-song-ranked-getty.jpg" alt="Music 1">
-                <img src="https://www.dynamicrhythms.com.au/wp-content/uploads/2023/10/Untitled-design-1.jpg" alt="Music 2">
-                <img src="https://i.scdn.co/image/ab67616d00001e023a7355d8c3fe5d69d79e8ed3" alt="Music 3">
-            </div>
+            <li>
+                I love doing origami.
+                <div class="image-row">
+                    <div class="centered-img">
+                        <img src="https://www.lavenderhome.co.uk/cdn/shop/files/origami-fox.jpg?v=1687346677&width=1500" alt="Origami 1">
+                    </div>
+                    <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/origami-3584204-1280_ver_1.jpg" alt="Origami 2">
+                    <img src="https://www.wikihow.com/images/8/81/Fold-an-Origami-Star-Summary-Version-2.jpg" alt="Origami 3">
+                </div>
+            </li>
 
-            <li>My favourite sport is volleyball.</li>
-            <div class="image-row">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRveEsmne7K6U7jkBqcpss0ZjgsYAxDeBAZYmw2rJ5NBdHLFll9M5EU2H6n25L1w65nMH4&usqp=CAU" alt="Volleyball 1">
-                <img src="https://i.pinimg.com/564x/af/ba/a1/afbaa18bbc9361e165d299962cbd69be.jpg" alt="Volleyball 2">
-                <img src="https://www.improveyourvolley.com/images/x383px-VolleyballCourtwithlengths.png.pagespeed.ic.EB6GEBP2I3.png" alt="Volleyball 3">
-            </div>
+            <li>
+                I love to listen to lots of music.
+                <div class="image-row">
+                    <div class="centered-img">
+                        <img src="https://media.hearstapps.com/loop/seventeencover-v3b-1603815346.mp4/poster.jpg" alt="Music 1">
+                    </div>
+                    <img src="https://www.dynamicrhythms.com.au/wp-content/uploads/2023/10/Untitled-design-1.jpg" alt="Music 2">
+                    <img src="https://i.scdn.co/image/ab67616d00001e023a7355d8c3fe5d69d79e8ed3" alt="Music 3">
+                </div>
+            </li>
 
-            <li>My friends say I give good advice.</li>
+            <li>
+                My favourite sport is volleyball.
+                <div class="image-row">
+                    <div class="centered-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRveEsmne7K6U7jkBqcpss0ZjgsYAxDeBAZYmw2rJ5NBdHLFll9M5EU2H6n25L1w65nMH4&usqp=CAU" alt="Volleyball 1">
+                    </div>
+                    <img src="https://i.pinimg.com/564x/af/ba/a1/afbaa18bbc9361e165d299962cbd69be.jpg" alt="Volleyball 2">
+                    <img src="https://www.improveyourvolley.com/images/x383px-VolleyballCourtwithlengths.png.pagespeed.ic.EB6GEBP2I3.png" alt="Volleyball 3">
+                </div>
+            </li>
+
+            <li>
+                My friends say I give good advice.
+            </li>
+
         </ol>
 
         <h2 id="goals">My Goals</h2>
@@ -129,3 +179,4 @@
 
 </body>
 </html>
+
