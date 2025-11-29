@@ -11,6 +11,7 @@
             background: #f3f6ff;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         /* Main content card */
@@ -19,48 +20,86 @@
             margin: 40px auto;
             padding: 45px 55px;
             background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-            transition: 0.3s ease;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .content:hover {
-            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
         /* Titles */
         .content h1, .content h2, .content h3 {
             color: #3d52ff;
-            border-left: 6px solid #3d52ff;
-            padding-left: 14px;
-            margin-top: 35px;
             font-weight: 600;
-        } 
-        .content p {
-        line-height: 1.7;
-        margin-top: 12px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 10px;
         }
 
-        /* Flex image/text alignment */
+        .content h1::after, .content h2::after, .content h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #3d52ff, #6b8cff);
+            border-radius: 2px;
+        }
+
+        /* Paragraphs */
+        .content p {
+            line-height: 1.7;
+            margin-top: 12px;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .content p:hover {
+            transform: scale(1.02);
+        }
+
+        /* Flex image/text blocks */
         .flex-block {
             display: flex;
-            gap: 20px;
             align-items: center;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 20px;
+            background: #fdfdfd;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             flex-wrap: wrap;
         }
 
+        .flex-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
         .flex-block img {
-            border-radius: 16px;
-            max-width: 100%;
             width: 400px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            max-width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
         }
 
         .flex-block img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+        }
+
+        /* Alternate alignment for variety */
+        .flex-block:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
         /* Sidebar */
@@ -72,7 +111,6 @@
             padding-left: 20px;
         }
 
-        /* Sidebar item */
         .sidebar-item a {
             text-decoration: none;
             color: #333;
@@ -80,7 +118,7 @@
             padding: 10px 16px;
             border-radius: 8px;
             transition: 0.3s ease;
-            font-size: 1.15rem; /* slightly larger font */
+            font-size: 1.15rem;
         }
 
         .sidebar-item a:hover {
@@ -94,17 +132,14 @@
             margin-bottom: 40px;
         }
 
-        /* Default visible section */
         #work-overview {
             display: block;
         }
 
-        /* Show clicked section */
         .content-section:target {
             display: block;
         }
 
-        /* Hide overview when another section is opened */
         .content-section:target ~ #work-overview {
             display: none;
         }
@@ -113,12 +148,12 @@
         hr {
             border: none;
             height: 1px;
-            background: #202021;
-            margin: 60px 0;
-            border-radius: 40px;
+            background: #3d52ff;
+            margin: 50px 0;
+            border-radius: 10px;
         }
 
-        /* Ordered / unordered list styling */
+        /* Lists */
         .content ol, .content ul {
             margin-top: 12px;
             padding-left: 25px;
@@ -129,10 +164,15 @@
             margin: 6px 0;
         }
 
-        /* Small hover effect on content paragraphs */
-        .content p:hover {
-            transform: scale(1.01);
-            transition: transform 0.3s ease;
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .flex-block {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .flex-block img {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -163,120 +203,174 @@
 
     <!-- Projects Section -->
     <div id="projects" class="content-section">
-        <h2>Projects</h2>
+    <h2>Projects</h2>
 
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/IMG20251028221241.thumbnail.jpg" alt="Costume Design">
-            <p>This is where I worked as the costume designer for the Bhutan baccalaureate play competition.</p>
-        </div>
-
-        <h3>Drawbacks</h3>
-        <ul>
-            <li>Time management</li>
-            <li>Materials and fabrics</li>
-            <li>Cooperation</li>
-            <li>The structure of the whole costume plan</li>
-        </ul>
-
-        <h3>Solution</h3>
-        <ul>
-            <li>Made a group plan</li>
-            <li>Worked late when needed</li>
-            <li>Each person handled their own tasks</li>
-            <li>Materials and fabrics were provided by our teacher</li>
-        </ul>
-
-        <h3>Overall experience</h3>
-        <p>Working as a costume designer was challenging. Initially, our cooperation and time management were poor, but we pulled everything together at the last minute. I was happy with the final result, making it a fun yet difficult experience.</p>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/82180de0467cfe0a/IMG_8474.thumbnail.jpg" alt="School Play">
-            <p>Our yearly schoolplay where I worked as part of the backstage team handling costumes, makeup, and stage. I was also the narrator.</p>
-        </div>
-
-        <h3>Drawbacks</h3>
-        <ul>
-            <li>Lack of cooperation</li>
-            <li>Time management issues</li>
-            <li>Skill gaps</li>
-        </ul>
-
-        <h3>Solution</h3>
-        <ul>
-            <li>Encouraged by director's reaction, we worked harder</li>
-            <li>Practiced in extra personal time</li>
-            <li>Gave constructive feedback to each other</li>
-        </ul>
-
-        <h3>Overall experience</h3>
-        <p>The play taught us to overcome challenges. Through feedback and teamwork, we improved skills, cooperation, and time management, ultimately achieving a performance we were proud of.</p>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/ab802e1359dfd744/IMG_20240613_101125.thumbnail.jpg" alt="Community Project">
-            <p>A project with grade 8 where we made a poster for the community about waste management to spread awareness.</p>
-        </div>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/Ingenious_Blorr-Lahdi.thumbnail.jpg" alt="Khorlo Design">
-            <p>The khorlo design for our sculpture mold for our aesthetic and technology project.</p>
-        </div>
-
-        <h3>Drawbacks</h3>
-        <ul>
-            <li>Design layout</li>
-            <li>Proportions of the design</li>
-        </ul>
-
-        <h3>Solutions</h3>
-        <ul>
-            <li>Asked our teachers for help</li>
-            <li>Created drawings first and planned sides carefully</li>
-        </ul>
-
-        <h3>Overall experience</h3>
-        <p>Designing taught the importance of planning and proportions. After guidance from teachers and proper sketches, we achieved better results with organized work.</p>
-        <hr>
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/IMG20251028221241.thumbnail.jpg" alt="Costume Design">
+        <p>This is where I worked as the costume designer for the Bhutan baccalaureate play competition.</p>
     </div>
+
+    <h3>Drawbacks</h3>
+    <ul>
+        <li>Time management</li>
+        <li>Materials and fabrics</li>
+        <li>Cooperation</li>
+        <li>The structure of the whole costume plan</li>
+    </ul>
+
+    <h3>Solution</h3>
+    <ul>
+        <li>Made a group plan</li>
+        <li>Worked late when needed</li>
+        <li>Each person handled their own tasks</li>
+        <li>Materials and fabrics were provided by our teacher</li>
+    </ul>
+
+    <h3>Overall experience</h3>
+    <p>Working as a costume designer was challenging. Initially, our cooperation and time management were poor, but we pulled everything together at the last minute. I was happy with the final result, making it a fun yet difficult experience.</p>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/82180de0467cfe0a/IMG_8474.thumbnail.jpg" alt="School Play">
+        <p>Our yearly schoolplay where I worked as part of the backstage team handling costumes, makeup, and stage. I was also the narrator.</p>
+    </div>
+
+    <h3>Drawbacks</h3>
+    <ul>
+        <li>Lack of cooperation</li>
+        <li>Time management issues</li>
+        <li>Skill gaps</li>
+    </ul>
+
+    <h3>Solution</h3>
+    <ul>
+        <li>Encouraged by director's reaction, we worked harder</li>
+        <li>Practiced in extra personal time</li>
+        <li>Gave constructive feedback to each other</li>
+    </ul>
+
+    <h3>Overall experience</h3>
+    <p>The play taught us to overcome challenges. Through feedback and teamwork, we improved skills, cooperation, and time management, ultimately achieving a performance we were proud of.</p>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/ab802e1359dfd744/IMG_20240613_101125.thumbnail.jpg" alt="Community Project">
+        <p>A project with grade 8 where we made a poster for the community about waste management to spread awareness.</p>
+    </div>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/Ingenious_Blorr-Lahdi.thumbnail.jpg" alt="Khorlo Design">
+        <p>The khorlo design for our sculpture mold for our aesthetic and technology project.</p>
+    </div>
+
+    <h3>Drawbacks</h3>
+    <ul>
+        <li>Design layout</li>
+        <li>Proportions of the design</li>
+    </ul>
+
+    <h3>Solutions</h3>
+    <ul>
+        <li>Asked our teachers for help</li>
+        <li>Created drawings first and planned sides carefully</li>
+    </ul>
+
+    <h3>Overall experience</h3>
+    <p>Designing taught the importance of planning and proportions. After guidance from teachers and proper sketches, we achieved better results with organized work.</p>
+    <hr>
+
+    <style>
+        /* Center images and make them larger */
+        #projects .flex-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        #projects .flex-block img {
+            border-radius: 16px;
+            max-width: 600px; /* set image size */
+            width: 100%;
+            height: auto;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #projects .flex-block img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+        }
+    </style>
+</div>
 
     <!-- Work Overview Section -->
     <div id="work-overview" class="content-section">
-        <h1>My Work</h1>
-        <p>This page showcases my work, experience, and personal projects.</p>
-        <p>These are the overviews (pictures) of works I have done after coming to The Royal Academy.</p>
+    <h1>My Work</h1>
+    <p>This page showcases my work, experience, and personal projects.</p>
+    <p>These are the overviews (pictures) of works I have done after coming to The Royal Academy.</p>
 
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/IMG20251028221241.thumbnail.jpg" alt="Costume Design">
-            <p>Costume designer for the Bhutan baccalaureate play competition.</p>
-        </div>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/82180de0467cfe0a/IMG_8474.thumbnail.jpg" alt="School Play">
-            <p>Backstage team, costumes, makeup, stage, and narrator for the yearly schoolplay.</p>
-        </div>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/ab802e1359dfd744/IMG_20240613_101125.thumbnail.jpg" alt="Community Project">
-            <p>Poster project with grade 8 on waste management awareness.</p>
-        </div>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/Ingenious_Blorr-Lahdi.thumbnail.jpg" alt="Khorlo Design">
-            <p>Khorlo sculpture mold for aesthetic and technology project.</p>
-        </div>
-        <hr>
-
-        <div class="flex-block">
-            <img src="https://img.redbull.com/images/c_crop,x_1233,y_0,h_3866,w_3093/c_fill,w_400,h_500/q_auto,f_auto/redbullcom/2024/11/25/afphyrkgxetcgbzlhcfi/olivia-babcock-volleyball" alt="Volleyball">
-            <p>Junior girls volleyball competition (placeholder image).</p>
-        </div>
-        <hr>
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/IMG20251028221241.thumbnail.jpg" alt="Costume Design">
+        <p>Costume designer for the Bhutan baccalaureate play competition. In this project, I was responsible for creating designs that were both visually striking and practical for the performers. It required attention to detail, creativity, and collaboration with other team members to ensure every costume complemented the storytelling and stage environment.</p>
     </div>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/82180de0467cfe0a/IMG_8474.thumbnail.jpg" alt="School Play">
+        <p>Backstage team, costumes, makeup, stage, and narrator for the yearly schoolplay. Being part of the production allowed me to experience the coordination required behind the scenes. I learned the importance of teamwork, timing, and problem-solving under pressure while ensuring each performance ran smoothly.</p>
+    </div>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/ab802e1359dfd744/IMG_20240613_101125.thumbnail.jpg" alt="Community Project">
+        <p>Poster project with grade 8 on waste management awareness. This project gave me an opportunity to engage with the community creatively. I helped design educational posters that effectively communicated important environmental messages and encouraged sustainable practices among students and local residents.</p>
+    </div>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img-cdn.heictojpg.com/jpg/a7d22fc32fce4370/Ingenious_Blorr-Lahdi.thumbnail.jpg" alt="Khorlo Design">
+        <p>Khorlo sculpture mold for aesthetic and technology project. This project challenged my design and technical skills as I worked on conceptualizing and executing a precise sculpture mold. I learned how to plan proportions carefully, work with materials, and bring a creative idea from paper to a tangible model.</p>
+    </div>
+    <hr>
+
+    <div class="flex-block">
+        <img src="https://img.redbull.com/images/c_crop,x_1233,y_0,h_3866,w_3093/c_fill,w_400,h_500/q_auto,f_auto/redbullcom/2024/11/25/afphyrkgxetcgbzlhcfi/olivia-babcock-volleyball" alt="Volleyball">
+        <p>Junior girls volleyball competition (placeholder image). Participating in sports events like this taught me teamwork, strategy, and leadership. Even outside the academic or creative projects, I learned how communication and trust between teammates play a crucial role in achieving collective success.</p>
+    </div>
+    <hr>
+
+    <style>
+        /* Larger, responsive images for work overview */
+        #work-overview .flex-block img {
+            border-radius: 16px;
+            width: 100%;
+            max-width: 700px; /* larger image size */
+            height: auto;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #work-overview .flex-block img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+        }
+
+        /* Optional: center images on smaller screens */
+        @media (max-width: 800px) {
+            #work-overview .flex-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</div>
+
+
 
 </div>
 </body>
